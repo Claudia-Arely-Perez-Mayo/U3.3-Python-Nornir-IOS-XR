@@ -1,0 +1,45 @@
+2021-08-16 08:59:18,175 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_file': 'IOSXRv.txt'} on 1 hosts
+2021-08-16 08:59:47,755 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\MaYiCk-GiO-DC\AppData\Local\Programs\Python\Python39-32\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\MaYiCk-GiO-DC\AppData\Local\Programs\Python\Python39-32\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MaYiCk-GiO-DC\AppData\Local\Programs\Python\Python39-32\lib\site-packages\netmiko\base_connection.py", line 573, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\MaYiCk-GiO-DC\AppData\Local\Programs\Python\Python39-32\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MaYiCk-GiO-DC\AppData\Local\Programs\Python\Python39-32\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\MaYiCk-GiO-DC\AppData\Local\Programs\Python\Python39-32\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 29, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "C:\Users\MaYiCk-GiO-DC\AppData\Local\Programs\Python\Python39-32\lib\site-packages\netmiko\base_connection.py", line 1809, in send_config_from_file
+    return self.send_config_set(cfg_file, **kwargs)
+  File "C:\Users\MaYiCk-GiO-DC\AppData\Local\Programs\Python\Python39-32\lib\site-packages\netmiko\cisco\cisco_xr.py", line 28, in send_config_set
+    return super().send_config_set(
+  File "C:\Users\MaYiCk-GiO-DC\AppData\Local\Programs\Python\Python39-32\lib\site-packages\netmiko\base_connection.py", line 1921, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "C:\Users\MaYiCk-GiO-DC\AppData\Local\Programs\Python\Python39-32\lib\site-packages\netmiko\base_connection.py", line 655, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\MaYiCk-GiO-DC\AppData\Local\Programs\Python\Python39-32\lib\site-packages\netmiko\base_connection.py", line 583, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2021-08-16 08:59:47,766 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['interface lo 7', 'description Equipo1NornirConPython', 'ipv4 add 7.7.7.7 255.255.255.255', 'commit']} on 1 hosts
+2021-08-16 08:59:47,766 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int brief'} on 1 hosts
+2021-08-16 09:02:23,886 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_file': 'IOSXRv.txt'} on 1 hosts
+2021-08-16 09:02:36,567 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['interface lo 7', 'description Equipo1NornirConPython', 'ipv4 add 7.7.7.7 255.255.255.255', 'commit']} on 1 hosts
+2021-08-16 09:02:38,601 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int brief'} on 1 hosts
+2021-08-16 09:22:37,994 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_file': 'IOSXRv.txt'} on 1 hosts
+2021-08-16 09:22:50,059 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['interface lo 7', 'description Equipo1NornirConPython', 'ipv4 add 7.7.7.7 255.255.255.255', 'commit']} on 1 hosts
+2021-08-16 09:22:51,917 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'do show ip int brief'} on 1 hosts
