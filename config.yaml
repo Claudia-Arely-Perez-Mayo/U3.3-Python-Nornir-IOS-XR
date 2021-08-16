@@ -1,8 +1,8 @@
 ventory:
     plugin: SimpleInventory
     options:
-        host_file: "hosts.yaml"
-        group_file: "groups.yaml"
+        host_file: "C:/Users/MaYiCk-GiO-DC/Desktop/U3.3-Python-Nornir-IOS-XR/hosts.yaml"
+        group_file: "C:/Users/MaYiCk-GiO-DC/Desktop/U3.3-Python-Nornir-IOS-XR/groups.yaml"
 nner:
 plugin: threaded
 options:
