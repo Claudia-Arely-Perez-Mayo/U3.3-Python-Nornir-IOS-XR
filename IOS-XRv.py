@@ -3,7 +3,7 @@ from nornir_utils.plugins.functions import print_result
 from nornir_netmiko.tasks import netmiko_send_config, netmiko_send_command
 
 nr = InitNornir(
-    config_file = "config.yaml", dry_run=True
+    config_file = "C:/Users/MaYiCk-GiO-DC/Desktop/U3.3-Python-Nornir-IOS-XR/config.yaml", dry_run=True
 )
 
 s1=nr.run(netmiko_send_config, config_file= "IOSXRv.txt")
